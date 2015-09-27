@@ -77,7 +77,7 @@ if __name__ == '__main__':
     # print( Command.execute(["ls", "-a"]).pipe(['grep', 'py']).get_result() )
     #print( Command.execute(["ls", "-a"]).pipe(['grep', 'py']).grep(r"ardrone").get_results() )
 
-    a = Command.execute(["ls","-al"]).mapping( lambda x:x.translate(None, "belphet") )
+    a = Command.execute(["ls","-al"]).mapping( lambda x:x.translate(None, "py") )
     # print(a.get_results())
 
     for r in a.get_results():
