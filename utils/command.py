@@ -1,3 +1,4 @@
+
 import subprocess
 import re
 import functools
@@ -71,6 +72,8 @@ class Command:
 
 
 if __name__ == '__main__':
+    # for debug
+    
     # print( Command.execute(["ls", "-a"]).pipe(['grep', 'py']).get_result() )
     #print( Command.execute(["ls", "-a"]).pipe(['grep', 'py']).grep(r"ardrone").get_results() )
 
