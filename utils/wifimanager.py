@@ -2,9 +2,11 @@
 import subprocess
 import re
 
+import command
+
 class WifiConnector:
     def __init__(self):
-        self.__cmd = Command
+        self.__cmd = command.Command
 
     def scan(self, wifi_if = 'wlan0'):
         cmd = ['iwlist', wifi_if, 'scan']
@@ -18,7 +20,7 @@ class WifiConnector:
         cmd = ['ifdown', wifi_if]
         return self.__cmd.execute(cmd)
 
-    def ifdown(self, wifi_if = 'wlan0'):
+    def ifup(self, wifi_if = 'wlan0'):
         cmd = ['ifup', wifi_if]
         return self.__cmd.execute(cmd)
 
@@ -52,4 +54,5 @@ class ARDroneWifiManager:
     
 
 if __name__ == '__main__':
-    pass
+    cmd = WifiConnector()
+    print(cmd.find_essid())

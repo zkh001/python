@@ -1,4 +1,5 @@
 class Keypad:
+    """ For Reading Key without Delay """
     
     def __init__(self):
         import platform
@@ -8,11 +9,16 @@ class Keypad:
         else:
             self.reader = self.OnOthers()
 
+    def readkey(self):
+        """ read key without delay """
+        return self.reader.read()
+
     def initialize(self):
         self.reader.initialize()
+
+    def destroy(self):
+        self.reader.destroy()
             
-    def readkey(self):
-        return self.reader.read()
  
     # with statement is available
     def __enter__(self):
@@ -20,7 +26,7 @@ class Keypad:
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        self.reader.destroy()
+        self.destroy()
         return True             # for suppressing exceptions
 
     class OSTemplate:
