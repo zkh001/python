@@ -2,7 +2,7 @@
 import subprocess
 import re
 
-import command
+import command                  # 自作したやつ
 
 class WifiConnector:
     def __init__(self):
